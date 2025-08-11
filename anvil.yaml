@@ -89,8 +89,8 @@ db_schema:
     server: full
     title: Users
 dependencies: []
-metadata: {logo_img: 'asset:green_thumb_logo_1.png', title: Green Thumb Nursery}
-name: Clone of Green Thumb Nursery app
+metadata: {logo_img: 'asset:green_thumb_logo_1.png', title: Green Thumb Nursery v2.0}
+name: Green Thumb Nursery app v2
 package_name: Green_Thumb_Nursery_app
 renamed: true
 runtime_options:
