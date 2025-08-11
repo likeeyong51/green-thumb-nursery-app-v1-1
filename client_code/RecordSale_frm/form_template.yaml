@@ -1,0 +1,43 @@
+components:
+- components:
+  - layout_properties: {grid_position: 'MBBDBX,LIUSPB'}
+    name: record_sale_lbl
+    properties:
+      align: center
+      background: '#32582d'
+      foreground: '#98f1ba'
+      icon: fa:leaf
+      role: title
+      spacing:
+        margin: [null, null, 17, null]
+        padding: [15, null, 15, null]
+      text: Record Sale
+    type: Label
+  - components:
+    - data_bindings:
+      - {code: 'self.item[''plant_sold'']', property: selected_value, writeback: true}
+      layout_properties: {grid_position: 'KWRQXL,YCAJHT'}
+      name: plant_drp
+      properties: {include_placeholder: true, placeholder: Select plant, role: outlined}
+      type: DropDown
+    - data_bindings:
+      - {code: 'self.item[''quantity_sold'']', property: text, writeback: true}
+      layout_properties: {grid_position: 'KWRQXL,ZXABXG AAZBPR,OKMCMO'}
+      name: qty_txb
+      properties: {align: center, placeholder: Quantity, role: outlined, type: number}
+      type: TextBox
+    - event_bindings: {click: record_sale_btn_click}
+      layout_properties: {grid_position: 'KWRQXL,ZXABXG AAZBPR,BTHEJC'}
+      name: record_sale_btn
+      properties: {icon: 'fa:thumbs-o-up', role: outlined-button, text: Confirm Sale}
+      type: Button
+    layout_properties: {grid_position: 'FDHZKD,CVSJMS'}
+    name: column_panel_1
+    properties: {col_widths: '{"YCAJHT":40,"ZXABXG":20,"OKMCMO":25,"BTHEJC":35}'}
+    type: ColumnPanel
+  layout_properties: {grid_position: 'AFWJBD,BMAZDV'}
+  name: outlined_card_1
+  properties: {role: outlined-card}
+  type: ColumnPanel
+container: {type: ColumnPanel}
+is_package: true

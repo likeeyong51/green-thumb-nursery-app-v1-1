@@ -1,0 +1,33 @@
+components:
+- event_bindings: {tick: timer_1_tick}
+  layout_properties: {grid_position: 'VSNRDE,FXYFZU'}
+  name: timer_1
+  properties: {}
+  type: Timer
+- layout_properties: {grid_position: 'RDRWTH,RDFTJI'}
+  name: spacer_1
+  properties: {height: 112}
+  type: Spacer
+- layout_properties: {grid_position: 'VSNRDE,PVYCXB'}
+  name: spacer_2
+  properties: {height: 32}
+  type: Spacer
+- layout_properties: {grid_position: 'VSNRDE,TRPZIN'}
+  name: splash_img
+  properties:
+    alt_text: Green Thumb Nursery App Splash
+    border_radius: ''
+    height: 317
+    margin: [5, null, 5, null]
+    role: rounded-image
+    source: _/theme/splash_screen.png
+    visible: true
+  type: Image
+- layout_properties: {grid_position: 'VSNRDE,TTXZBK'}
+  name: spacer_3
+  properties: {height: 32}
+  type: Spacer
+container:
+  properties: {col_widths: '{"PVYCXB":15,"TTXZBK":15,"WHXVCV":15,"TRPZIN":15}'}
+  type: ColumnPanel
+is_package: true

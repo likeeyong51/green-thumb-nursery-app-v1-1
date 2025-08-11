@@ -1,0 +1,92 @@
+components:
+- layout_properties: {grid_position: 'PCWLDY,ECSYIY'}
+  name: spacer_1
+  properties: {height: 12}
+  type: Spacer
+- layout_properties: {grid_position: 'EBZVLI,RJOPJY'}
+  name: label_1
+  properties:
+    align: center
+    icon: fa:address-book-o
+    role: headline
+    spacing:
+      margin: [null, null, 34, null]
+    text: Sign up for a new account
+  type: Label
+- data_bindings:
+  - {code: 'self.item[''firstname'']', property: text, writeback: true}
+  layout_properties: {grid_position: 'FVIHTG,TUYWZB'}
+  name: firstname_txb
+  properties: {placeholder: First name, role: outlined, tooltip: Enter your first name}
+  type: TextBox
+- data_bindings:
+  - {code: 'self.item[''lastname'']', property: text, writeback: true}
+  layout_properties: {grid_position: 'FVIHTG,HGHVNK'}
+  name: lastname_txb
+  properties: {placeholder: Last name, role: outlined, tooltip: Enter your last name}
+  type: TextBox
+- data_bindings:
+  - {code: 'self.item[''emp_id'']', property: text, writeback: true}
+  layout_properties: {grid_position: 'UFBMIU,KISPAO'}
+  name: employeeID_txb
+  properties: {placeholder: Employee ID, role: outlined, tooltip: Enter your employee ID}
+  type: TextBox
+- data_bindings:
+  - {code: 'self.item[''role'']', property: selected_value, writeback: true}
+  layout_properties: {grid_position: 'UFBMIU,JOPGKY'}
+  name: role_drp
+  properties: {include_placeholder: true, placeholder: Role, role: outlined, tooltip: Select your role}
+  type: DropDown
+- data_bindings:
+  - {code: 'self.item[''password'']', property: text, writeback: true}
+  event_bindings: {change: check_password_match}
+  layout_properties: {grid_position: 'UFBMIU,XVMNNP'}
+  name: password_txb
+  properties: {hide_text: true, placeholder: Password, role: outlined, tooltip: Enter your password}
+  type: TextBox
+- data_bindings:
+  - {code: 'self.item[''confirmed_password'']', property: text, writeback: true}
+  event_bindings: {change: check_password_match}
+  layout_properties: {grid_position: 'UFBMIU,CYCRAI'}
+  name: confirmed_password_txb
+  properties: {hide_text: true, placeholder: Confirmed Password, role: outlined, tooltip: Enter your password again to confirm password}
+  type: TextBox
+- layout_properties: {grid_position: 'UFBMIU,QLGSOT'}
+  name: conf_pass_check_lbl
+  properties: {icon_align: left_edge}
+  type: Label
+- components:
+  - layout_properties: {grid_position: 'QNZZHQ,SQMLTA'}
+    name: spacer_2
+    properties: {height: 13}
+    type: Spacer
+  - layout_properties: {grid_position: 'HNUEPA,DVSHZR'}
+    name: spacer_3
+    properties: {height: 32}
+    type: Spacer
+  - event_bindings: {click: signup_btn_click}
+    layout_properties: {grid_position: 'HNUEPA,DNTJNY'}
+    name: signup_btn
+    properties: {bold: false, icon: 'fa:thumbs-o-up', role: outlined-button, text: Sign Up}
+    type: Button
+  - event_bindings: {click: cancel_btn_click}
+    layout_properties: {grid_position: 'HNUEPA,YLKTNG'}
+    name: cancel_btn
+    properties: {icon: 'fa:close', text: Cancel}
+    type: Button
+  - layout_properties: {grid_position: 'HNUEPA,HWEJEW'}
+    name: spacer_4
+    properties: {height: 32}
+    type: Spacer
+  - layout_properties: {grid_position: 'DRNPYP,NVYYSO'}
+    name: spacer_5
+    properties: {height: 5}
+    type: Spacer
+  layout_properties: {grid_position: 'DNKSTD,DKZPJX'}
+  name: column_panel_1
+  properties: {col_widths: '{"DVSHZR":20,"DNTJNY":10,"YLKTNG":10,"HWEJEW":20}'}
+  type: ColumnPanel
+container:
+  properties: {col_widths: '{"KISPAO":10,"JOPGKY":10,"XVMNNP":18,"TPBOQA":2,"CYCRAI":18,"QLGSOT":2}'}
+  type: ColumnPanel
+is_package: true

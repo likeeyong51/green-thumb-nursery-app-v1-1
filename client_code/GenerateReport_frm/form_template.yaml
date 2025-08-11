@@ -1,0 +1,116 @@
+components:
+- components:
+  - layout_properties: {grid_position: 'VNWBWB,YBYSGH'}
+    name: low_stock_lbl
+    properties: {foreground: '#375d47', icon: 'fa:th', role: title, text: Low-Stock Report}
+    type: Label
+  - layout_properties: {grid_position: 'VNWBWB,LOVSNQ'}
+    name: spacer_1
+    properties: {height: 32}
+    type: Spacer
+  - data_bindings:
+    - {code: 'self.item[''threshold'']', property: text, writeback: true}
+    event_bindings: {pressed_enter: generate_btn_click}
+    layout_properties: {full_width_row: false, grid_position: 'VNWBWB,UEDLVF'}
+    name: threshold_txb
+    properties: {align: center, placeholder: Enter threshold, role: outlined, tooltip: Enter the threshold quantity to generate the low-stock report, type: number}
+    type: TextBox
+  - event_bindings: {click: generate_btn_click}
+    layout_properties: {grid_position: 'VNWBWB,FHKLNY'}
+    name: generate_btn
+    properties:
+      align: center
+      font_size: 17
+      icon: fa:check
+      icon_align: top
+      role: null
+      spacing:
+        padding: [null, null, null, 0]
+      text: ''
+    type: Button
+  - event_bindings: {click: download_ls_report_btn_click}
+    layout_properties: {grid_position: 'VNWBWB,TNLYEH'}
+    name: download_ls_report_btn
+    properties: {bold: false, enabled: false, font_size: 20, foreground: '#375d47', icon: 'fa:arrow-down', icon_align: top, spacing_below: none, text: '', tooltip: Download Low-Stock Report}
+    type: Button
+  - event_bindings: {change: file_format_drp_change}
+    layout_properties: {grid_position: 'VNWBWB,RCQMRJ'}
+    name: file_format_drp
+    properties:
+      include_placeholder: true
+      items: [JSON, CSV, PDF]
+      placeholder: Format
+      role: outlined
+      visible: false
+    type: DropDown
+  - components:
+    - name: low_stock_rpnl
+      properties: {item_template: GenerateReport_frm.RowTemplate2}
+      type: RepeatingPanel
+    layout_properties: {grid_position: 'WVAHEX,UIFTOO'}
+    name: low_stock_grd
+    properties:
+      columns:
+      - {data_key: name, id: JKSDUP, title: Plant Name}
+      - {data_key: type, id: VJQQOR, title: Plant Type}
+      - {data_key: price, id: OJLQEN, title: Price}
+      - {data_key: stock_qty, id: LKTNYU, title: Quantity}
+      foreground: '#335544'
+    type: DataGrid
+  layout_properties: {grid_position: 'IELPIY,YTBYVQ'}
+  name: low_stock_crd
+  properties:
+    col_widths: '{"LOVSNQ":40,"UEDLVF":20,"YBYSGH":30,"FHKLNY":7,"RCQMRJ":15,"TNLYEH":8}'
+    role: outlined-card
+    spacing:
+      margin: [0, null, null, null]
+    visible: false
+  type: ColumnPanel
+- components:
+  - layout_properties: {grid_position: 'YGVKEB,KNBYGO'}
+    name: best_seller_lbl
+    properties: {foreground: '#375d47', icon: 'fa:fire', role: title, text: Best-Seller Report}
+    type: Label
+  - event_bindings: {click: download_bs_report_btn_click}
+    layout_properties: {grid_position: 'YGVKEB,EVVBAP'}
+    name: download_bs_report_btn
+    properties: {bold: false, enabled: false, font_size: 20, foreground: '#375d47', icon: 'fa:arrow-down', icon_align: top, text: '', tooltip: Download Best-Seller Report}
+    type: Button
+  - event_bindings: {change: file_format_drp2_change}
+    layout_properties: {grid_position: 'YGVKEB,MNHVCJ'}
+    name: file_format_drp2
+    properties:
+      include_placeholder: true
+      items: [JSON, CSV, PDF]
+      placeholder: Format
+      role: outlined
+      visible: false
+    type: DropDown
+  - components:
+    - name: best_seller_rpnl
+      properties: {item_template: ViewInventory_frm.RowTemplate1}
+      type: RepeatingPanel
+    layout_properties: {grid_position: 'FUDZWG,OMTRSU'}
+    name: best_seller_grd
+    properties:
+      columns:
+      - {data_key: plant_name, expand: false, id: JKSDUP, title: Plant}
+      - {data_key: total_sold, id: VJQQOR, title: Total Sold}
+      - {data_key: unit_price, id: MYHFPX, title: Unit Price ($)}
+      - {data_key: total_sales, id: OJLQEN, title: Total ($)}
+      foreground: '#335544'
+      rows_per_page: 10
+    type: DataGrid
+  layout_properties: {grid_position: 'DNFTDY,CLZXNC'}
+  name: best_sellers_crd
+  properties:
+    col_widths: '{"KNBYGO":65,"EVVBAP":5,"MNHVCJ":10}'
+    role: outlined-card
+    spacing:
+      margin: [0, null, null, null]
+    visible: false
+  type: ColumnPanel
+container:
+  properties: {col_widths: '{"WMZXTC":30}'}
+  type: ColumnPanel
+is_package: true
