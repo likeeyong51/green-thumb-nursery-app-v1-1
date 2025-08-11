@@ -15,6 +15,17 @@ db_schema:
       type: string
     server: full
     title: Files
+  media:
+    client: none
+    columns:
+    - admin_ui: {order: 0, width: 200}
+      name: img
+      type: media
+    - admin_ui: {order: 1, width: 200}
+      name: name
+      type: string
+    server: full
+    title: Media
   plant_inventory:
     client: none
     columns:

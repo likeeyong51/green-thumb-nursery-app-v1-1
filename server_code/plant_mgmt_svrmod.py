@@ -11,7 +11,7 @@ import csv
 import io
 from reportlab.pdfgen import canvas
 from reportlab.lib.pagesizes import A4
-from reportlab.platypus import SimpleDocTemplate, Table, TableStyle, Paragraph, Spacer
+from reportlab.platypus import SimpleDocTemplate, Table, TableStyle, Paragraph, Spacer, Image
 from reportlab.lib import colors
 from reportlab.lib.styles import getSampleStyleSheet
 from anvil import BlobMedia
@@ -345,6 +345,16 @@ def download_best_sellers_pdf2():
     # elements is a list of content blocks (title, table, etc)
     elements = []
     styles = getSampleStyleSheet()
+
+    # Insert logo
+    # logo_data = anvil.server.get_app_asset("splash_screen.png") # available in the client-side only
+    logo_row = app_tables.media.get(name="company_header")
+    logo_media = logo_row['img']
+    # Convert LazyMedia to BytesIO
+    image_bytes = io.BytesIO(logo_media.get_bytes())
+    logo = Image(image_bytes, width=70, height=50)  # Adjust size as needed
+    elements.append(logo)
+    elements.append(Spacer(1, 12))
 
     # Title
     # paragrah creates styled text

@@ -29,7 +29,7 @@ class Splash_frm(Splash_frmTemplate):
             get_dom_node(self).classList.add("splash-logo")#"splash-screen")
 
             # Wait for animation to finish, then open login form
-            js.window.setTimeout(self.go_to_login, 2500)
+            js.window.setTimeout(self.go_to_login, 2000)
             # open_form('Login_frm')
         else:
             self.time -= self.timer_1.interval
