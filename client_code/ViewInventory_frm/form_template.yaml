@@ -4,7 +4,8 @@ components:
     name: inventory_list_lbl
     properties: {foreground: '#375d47', icon: 'fa:leaf', role: title, text: Plant Inventory}
     type: Label
-  - layout_properties: {grid_position: 'WEVHZW,IZWUVS YHOTUB,ZISSYJ'}
+  - data_bindings: []
+    layout_properties: {grid_position: 'WEVHZW,IZWUVS YHOTUB,ZISSYJ'}
     name: inventory_list_rpnl
     properties: {foreground: '#335544', item_template: ViewInventory_frm.ItemTemplate2}
     type: RepeatingPanel
