@@ -41,7 +41,7 @@ class GenerateReport_frm(GenerateReport_frmTemplate):
             return
             
         # populate best seller grid
-        self.best_seller_rpnl.items = [sale for sale in sale_list_30_days_ago]
+        self.best_seller_rpnl.items = list(sale_list_30_days_ago) #[sale for sale in sale_list_30_days_ago]
         # self.download_bs_report_btn.enabled = True
         self.file_format_drp2.visible = True #if not self.file_format_drp2.visible else False
 
@@ -66,7 +66,7 @@ class GenerateReport_frm(GenerateReport_frmTemplate):
             return
 
         # GET low-stock report
-        self.threshold = threshold_val
+        self.threshold      = threshold_val
         self.low_stock_list = anvil.server.call('get_low_stock_list', threshold_val)
 
         if not self.low_stock_list or len(self.low_stock_list) == 0:
@@ -75,7 +75,7 @@ class GenerateReport_frm(GenerateReport_frmTemplate):
             return
         
         # show low-stock list
-        self.low_stock_rpnl.items = [plant for plant in self.low_stock_list]
+        self.low_stock_rpnl.items = list(self.low_stock_list) #[plant for plant in self.low_stock_list]
         # self.download_ls_report_btn.enabled = True
         self.file_format_drp.visible = True #if not self.file_format_drp.visible else False
 

@@ -3,13 +3,13 @@ components:
   - {code: 'self.item[''name'']', property: text, writeback: true}
   layout_properties: {grid_position: 'ISTSBI,QJBYSV'}
   name: name_txb
-  properties: {role: outlined, tooltip: Plant Name}
+  properties: {enabled: false, role: outlined, tooltip: Plant Name}
   type: TextBox
 - data_bindings:
   - {code: 'self.item[''type'']', property: selected_value, writeback: true}
   layout_properties: {grid_position: 'ISTSBI,DKQYZY JNRVVD,GJKVGH'}
   name: type_drp
-  properties: {role: outlined}
+  properties: {enabled: false, role: outlined}
   type: DropDown
 - layout_properties: {grid_position: 'ISTSBI,WAQSCV'}
   name: dollar_lbl
@@ -19,7 +19,7 @@ components:
   - {code: 'self.item[''price'']', property: text, writeback: false}
   layout_properties: {grid_position: 'ISTSBI,WIWZJD'}
   name: price_txb
-  properties: {align: center, role: outlined, tooltip: Plant Price, type: number}
+  properties: {align: center, enabled: false, role: outlined, tooltip: Plant Price, type: number}
   type: TextBox
 - layout_properties: {grid_position: 'ISTSBI,BKOMXC'}
   name: qty_lbl
@@ -29,9 +29,19 @@ components:
   - {code: 'self.item[''stock_qty'']', property: text, writeback: true}
   layout_properties: {grid_position: 'ISTSBI,FYSGEI'}
   name: stock_qty_txb
-  properties: {align: center, role: outlined}
+  properties: {align: center, enabled: false, role: outlined}
   type: TextBox
+- event_bindings: {click: edit_btn_click}
+  layout_properties: {grid_position: 'ISTSBI,ANKQQN'}
+  name: edit_btn
+  properties: {font_size: 17, icon: 'fa:edit', icon_align: left_edge, text: '', tooltip: Edit plant record}
+  type: Button
+- event_bindings: {click: delete_btn_click}
+  layout_properties: {grid_position: 'ISTSBI,IWXUFK'}
+  name: delete_btn
+  properties: {font_size: 17, icon: 'fa:remove', icon_align: left_edge, text: '', tooltip: Delete plant record}
+  type: Button
 container:
-  properties: {background: '', col_widths: '{"QJBYSV":20,"DKQYZY":25,"WIWZJD":18,"FYSGEI":10,"WAQSCV":5,"BKOMXC":4}'}
+  properties: {background: '', col_widths: '{"QJBYSV":25,"DKQYZY":27,"WIWZJD":12,"FYSGEI":10,"WAQSCV":8,"BKOMXC":6,"ANKQQN":4,"IWXUFK":4}'}
   type: ColumnPanel
 is_package: true
