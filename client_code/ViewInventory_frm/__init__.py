@@ -32,7 +32,7 @@ class ViewInventory_frm(ViewInventory_frmTemplate):
         plant_list = anvil.server.call('get_plant_list')
           
         if plant_list:
-            self.inventory_list_rpnl.items = [plant for plant in plant_list]
+            self.inventory_list_rpnl.items = list(plant_list) #[plant for plant in plant_list]
 
     def date_filter_dpk_change(self, **event_args):
         """This method is called when the selected date changes"""
@@ -46,7 +46,7 @@ class ViewInventory_frm(ViewInventory_frmTemplate):
     def build_sales_list(self, sales_list, show=True):
         '''build the sales list'''
         if sales_list:
-            self.sales_list_rpnl.items = [sale for sale in sales_list]
+            self.sales_list_rpnl.items = list(sales_list) #[sale for sale in sales_list]
             self.sales_log_crd.visible = show
         else:
             self.sales_list_rpnl.items = None

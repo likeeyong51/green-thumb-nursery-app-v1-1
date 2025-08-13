@@ -83,7 +83,7 @@ def get_sales_list(date=None):
     # build the inventory list
     for sale in sales_row or []:
         # build and append a single sale record for each sale_row
-        plant = sale['plant_sold']  if sale['plant_sold'] else None
+        plant = sale['plant_sold']  if sale['plant_sold']  else None
         user  = sale['recorded_by'] if sale['recorded_by'] else None
         
         sales_data.append({
@@ -103,10 +103,10 @@ def update_plant_record(plant, original_name):
     if plant_to_update:
         # update plant record
         plant_to_update.update(
-            name=plant['name'],
-            type=plant['type'],
-            price=plant['price'],
-            stock_qty=plant['stock_qty'],
+            name      = plant['name'],
+            type      = plant['type'],
+            price     = plant['price'],
+            stock_qty = plant['stock_qty']
         )
 
         # log updated changes
@@ -121,10 +121,16 @@ def update_plant_record(plant, original_name):
     return False    # update unsuccessful
 
 @anvil.server.callable
-def delete_plant_record(plant, original_name):
+def delete_plant_record(plant):
     # check if plant record exists
-    plant_to_update = app_tables.plant_inventory.get(name=original_name)
-    print(plant_to_update, original_name)
+    plant_to_delete = app_tables.plant_inventory.get(name=plant['name'])
+    print(plant_to_delete)
+
+    if plant_to_delete:
+        plant_to_delete.delete()
+        return True
+
+    return False 
 
 @anvil.server.callable
 def get_low_stock_list(threshold):

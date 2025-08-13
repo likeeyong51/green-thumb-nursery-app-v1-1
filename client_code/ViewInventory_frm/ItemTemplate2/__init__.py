@@ -75,11 +75,11 @@ class ItemTemplate2(ItemTemplate2Template):
         changes = self.update_plant_record(self.item, self.plant_update_info)
         
         if changes and anvil.server.call('update_plant_record', self.plant_update_info, self.item['name']):
-            print(changes)
+            # print(changes)
             self.enable_update_fields(False)
             Notification('Update successful').show()
         else:
-            alert('No change made...')
+            Notification('No change made...').show()
         
     def update_plant_record(self, row, updated_fields):
         changes = {}
@@ -110,4 +110,16 @@ class ItemTemplate2(ItemTemplate2Template):
 
     def delete_btn_click(self, **event_args):
         """This method is called when the button is clicked"""
-        pass
+        # confirm with user about deleting the record
+        confirmed = alert('Are you sure you want to delete this record?',
+                        buttons=[('Yes, True'), ('No', False)])
+        
+        if confirmed:
+            # proceed to delete record
+            if anvil.server.call('delete_plant_record', self.item)
+                Notification('Deletion completed.').show()
+                s
+        else:
+                alert('Record not found. Deletion unsuccessful.')
+        else:
+            Notification('Delete request cancelled.').show()
