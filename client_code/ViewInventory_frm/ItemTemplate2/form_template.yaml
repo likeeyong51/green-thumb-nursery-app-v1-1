@@ -51,6 +51,6 @@ components:
   properties: {font_size: 17, icon: 'fa:remove', icon_align: left_edge, text: '', tooltip: Delete plant record}
   type: Button
 container:
-  properties: {background: '', col_widths: '{"QJBYSV":25,"DKQYZY":27,"WIWZJD":10,"FYSGEI":10,"WAQSCV":10,"BKOMXC":6,"ANKQQN":4,"IWXUFK":4}'}
+  properties: {background: '', col_widths: '{"QJBYSV":25,"DKQYZY":27,"WIWZJD":10,"FYSGEI":9,"WAQSCV":7,"BKOMXC":5,"ANKQQN":6,"IWXUFK":7,"PMUIMK":6}'}
   type: ColumnPanel
 is_package: true

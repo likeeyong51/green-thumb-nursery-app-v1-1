@@ -38,7 +38,6 @@ class ItemTemplate2(ItemTemplate2Template):
             self.confirm_type_change_btn.visible = False
 
         # edit confirmation completed via change event of the fields
-        
 
     def delete_btn_click(self, **event_args):
         """This method is called when the button is clicked"""
