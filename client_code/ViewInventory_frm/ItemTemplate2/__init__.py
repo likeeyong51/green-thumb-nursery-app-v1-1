@@ -6,7 +6,6 @@ import anvil.tables as tables
 import anvil.tables.query as q
 from anvil.tables import app_tables
 
-
 class ItemTemplate2(ItemTemplate2Template):
     def __init__(self, **properties):
         # Set Form properties and Data Bindings.
@@ -78,6 +77,7 @@ class ItemTemplate2(ItemTemplate2Template):
             # print(changes)
             self.enable_update_fields(False)
             Notification('Update successful').show()
+            get_open_form().view_inventory_btn_click()
         else:
             Notification('No change made...').show()
         
@@ -112,14 +112,15 @@ class ItemTemplate2(ItemTemplate2Template):
         """This method is called when the button is clicked"""
         # confirm with user about deleting the record
         confirmed = alert('Are you sure you want to delete this record?',
-                        buttons=[('Yes, True'), ('No', False)])
+                        buttons=[('Yes', True), ('No', False)])
         
         if confirmed:
             # proceed to delete record
-            if anvil.server.call('delete_plant_record', self.item)
+            if anvil.server.call('delete_plant_record', self.item):
                 Notification('Deletion completed.').show()
-                s
-        else:
+                get_open_form().refresh_data_bindings()
+                
+            else:
                 alert('Record not found. Deletion unsuccessful.')
         else:
             Notification('Delete request cancelled.').show()
