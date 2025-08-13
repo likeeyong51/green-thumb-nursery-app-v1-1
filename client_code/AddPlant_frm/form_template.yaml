@@ -22,7 +22,7 @@ components:
       type: TextBox
     - data_bindings:
       - {code: 'self.item[''type'']', property: selected_value, writeback: true}
-      layout_properties: {grid_position: 'FMBKRI,SSXTAI'}
+      layout_properties: {grid_position: 'PXXXWX,FFKWQS'}
       name: plant_type_drp
       properties:
         align: center
@@ -60,7 +60,7 @@ components:
       type: Button
     layout_properties: {grid_position: 'UYKFYX,AVLHHG'}
     name: add_plant_pnl
-    properties: {col_widths: '{"KMZVJU":45,"SSXTAI":15,"UXZPBF":20,"UXJNZA":25,"BBEZYI":15}', spacing_below: small}
+    properties: {col_widths: '{"KMZVJU":45,"UXZPBF":15,"UXJNZA":20,"BBEZYI":25,"FFKWQS":15}', spacing_below: small}
     type: ColumnPanel
   layout_properties: {grid_position: 'IKRRRI,BHUKNI'}
   name: outlined_card_1

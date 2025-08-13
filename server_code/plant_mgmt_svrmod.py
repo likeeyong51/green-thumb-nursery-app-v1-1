@@ -96,6 +96,37 @@ def get_sales_list(date=None):
     return sales_data if sales_data else False
 
 @anvil.server.callable
+def update_plant_record(plant, original_name):
+    # check if plant record exists
+    plant_to_update = app_tables.plant_inventory.get(name=original_name)
+
+    if plant_to_update:
+        # update plant record
+        plant_to_update.update(
+            name=plant['name'],
+            type=plant['type'],
+            price=plant['price'],
+            stock_qty=plant['stock_qty'],
+        )
+
+        # log updated changes
+        # app_tables.change_log.add_row(
+        #     plant_id=plant_row.get_id(),
+        #     changes=changes,
+        #     updated_by=anvil.users.get_user(),
+        #     timestamp=datetime.now()
+        # )
+        return True # update successful
+
+    return False    # update unsuccessful
+
+@anvil.server.callable
+def delete_plant_record(plant, original_name):
+    # check if plant record exists
+    plant_to_update = app_tables.plant_inventory.get(name=original_name)
+    print(plant_to_update, original_name)
+
+@anvil.server.callable
 def get_low_stock_list(threshold):
     # GET low-stock list based on threshold
     low_stock_list = app_tables.plant_inventory.search(

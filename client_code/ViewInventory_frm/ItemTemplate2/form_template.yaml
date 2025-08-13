@@ -1,6 +1,6 @@
 components:
 - data_bindings:
-  - {code: 'self.item[''name'']', property: text, writeback: true}
+  - {code: 'self.item[''name'']', property: text, writeback: false}
   event_bindings: {pressed_enter: plant_field_pressed_enter}
   layout_properties: {grid_position: 'ISTSBI,QJBYSV'}
   name: name_txb
@@ -8,16 +8,11 @@ components:
   type: TextBox
 - data_bindings:
   - {code: 'self.item[''type'']', property: selected_value, writeback: false}
-  event_bindings: {change: type_drp_change}
-  layout_properties: {grid_position: 'ISTSBI,DKQYZY JNRVVD,GJKVGH'}
+  event_bindings: {change: plant_field_pressed_enter}
+  layout_properties: {grid_position: 'ISTSBI,DKQYZY'}
   name: type_drp
   properties: {enabled: false, role: outlined}
   type: DropDown
-- event_bindings: {click: confirm_type_change_btn_click}
-  layout_properties: {grid_position: 'ISTSBI,PMUIMK'}
-  name: confirm_type_change_btn
-  properties: {enabled: true, icon: 'fa:check', icon_align: left_edge, text: '', tooltip: Confirm type change, visible: false}
-  type: Button
 - layout_properties: {grid_position: 'ISTSBI,WAQSCV'}
   name: dollar_lbl
   properties: {align: right, bold: true, font_size: 18, icon: 'fa:dollar', icon_align: right_edge, text: ''}
@@ -34,7 +29,7 @@ components:
   properties: {align: right, bold: true, font_size: 17, icon: 'fa:envira', icon_align: right_edge, text: ''}
   type: Label
 - data_bindings:
-  - {code: 'self.item[''stock_qty'']', property: text, writeback: true}
+  - {code: 'self.item[''stock_qty'']', property: text, writeback: false}
   event_bindings: {pressed_enter: plant_field_pressed_enter}
   layout_properties: {grid_position: 'ISTSBI,FYSGEI'}
   name: stock_qty_txb
