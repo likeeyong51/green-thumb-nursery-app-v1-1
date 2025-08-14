@@ -128,7 +128,7 @@ db_schema:
     server: full
     title: Users
 dependencies: []
-metadata: {logo_img: 'asset:splash_screen.png', title: Green Thumb Nursery v1.1}
+metadata: {logo_img: 'asset:green_thumb_logo_tb.png', title: Green Thumb Nursery v1.1}
 name: Green Thumb Nursery app v1.1
 package_name: Green_Thumb_Nursery_app
 renamed: true

@@ -21,7 +21,7 @@ components:
       properties:
         font_size: 20
         icon: fa:user
-        icon_align: left_edge
+        icon_align: left
         spacing:
           padding: [22, null, null, null]
       type: Label
@@ -36,7 +36,7 @@ components:
       properties:
         font_size: 20
         icon: fa:key
-        icon_align: left_edge
+        icon_align: right_edge
         spacing:
           padding: [22, null, null, null]
       type: Label
@@ -66,7 +66,7 @@ components:
       type: Link
     layout_properties: {grid_position: 'GTFKTB,TZCXLF'}
     name: outlined_card_1
-    properties: {col_widths: '{"HSZIKL":27,"SWGSNX":24,"DSFSAS":13,"WYIYHA":12,"UIEOMY":3,"GMCLHP":3}', role: outlined-card}
+    properties: {col_widths: '{"HSZIKL":26,"SWGSNX":22,"DSFSAS":13,"WYIYHA":12,"UIEOMY":4,"GMCLHP":5}', role: outlined-card}
     type: ColumnPanel
   - layout_properties: {grid_position: 'IXGWJZ,JPCUKT'}
     name: spacer_1
@@ -83,9 +83,10 @@ components:
     type: ColumnPanel
   layout_properties: {slot: default}
   name: content_panel
-  properties: {col_widths: '{}'}
+  properties: {col_widths: '{"ZIWYBN":55}'}
   type: ColumnPanel
-- layout_properties: {slot: nav-right}
+- components: []
+  layout_properties: {slot: nav-right}
   name: navbar_links
   properties: {}
   type: FlowPanel
