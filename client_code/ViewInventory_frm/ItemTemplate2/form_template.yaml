@@ -40,12 +40,18 @@ components:
   name: edit_btn
   properties: {font_size: 17, icon: 'fa:edit', icon_align: left_edge, text: '', tooltip: Edit plant record}
   type: Button
+- data_bindings:
+  - {code: 'self.item[''edit'']', property: checked, writeback: false}
+  layout_properties: {grid_position: 'ISTSBI,TLHMKI'}
+  name: edit_chk
+  properties: {text: '', visible: true}
+  type: CheckBox
 - event_bindings: {click: delete_btn_click}
   layout_properties: {grid_position: 'ISTSBI,IWXUFK'}
   name: delete_btn
   properties: {font_size: 17, icon: 'fa:remove', icon_align: left_edge, text: '', tooltip: Delete plant record}
   type: Button
 container:
-  properties: {background: '', col_widths: '{"QJBYSV":25,"DKQYZY":27,"WIWZJD":10,"FYSGEI":9,"WAQSCV":7,"BKOMXC":5,"ANKQQN":6,"IWXUFK":7,"PMUIMK":6}'}
+  properties: {background: '', col_widths: '{"QJBYSV":25,"DKQYZY":27,"WIWZJD":10,"FYSGEI":9,"WAQSCV":7,"BKOMXC":5,"ANKQQN":6,"IWXUFK":7}'}
   type: ColumnPanel
 is_package: true
